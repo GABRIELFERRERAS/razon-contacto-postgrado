@@ -293,8 +293,7 @@ async function enviar(){
   if(!d.campus){alert('Por favor selecciona el campus.');return;}
   const btn=document.getElementById('sendBtn');
   btn.textContent='Enviando...';btn.disabled=true;
-  try{
-  await emailjs.send('service_a4hm6sb','template_jvgvgf3',{
+  try{await emailjs.send('service_1t69kt9','template_jvgvgf3',{
       subject:`Razón de Contacto — ${d.coord} | ${d.campus} | ${d.fecha}`,
       name:d.coord,
       to_email:getDestinatarios(),
