@@ -288,12 +288,13 @@ async function enviar(){
   btn.textContent='Enviando...';btn.disabled=true;
   try{
     await emailjs.send('service_1t69kt9','template_jvgvgf3',{
-      subject:`Razón de Contacto — ${d.coord} | ${d.campus} | ${d.fecha}`,
-      name:d.coord,
-      to_email:getDestinatarios(),
-      email:'gabrielferreras@pucmm.edu.do',
-      message:buildMessage(d)
-    },{publicKey:'neww1UscSNiUaNC4A'});
+  subject:`Razón de Contacto — ${d.coord} | ${d.campus} | ${d.fecha}`,
+  name:d.coord,
+  to_email:getDestinatarios(),
+  email:'gabrielferreras@pucmm.edu.do',
+  cc_email:'gabrielferreras@pucmm.edu.do',
+  message:buildMessage(d)
+},{publicKey:'neww1UscSNiUaNC4A'});
     alert('✅ ¡Razón de Contacto enviada exitosamente!');
   }catch(err){
     console.error(err);
